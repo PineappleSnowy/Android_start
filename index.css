@@ -1,0 +1,161 @@
+/* 小于600px时的响应式布局 */
+@media screen and (max-width: 600px) {}
+
+/* 图片动画 */
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+/* 按钮动画 */
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+
+    80% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* 超链接的字体 */
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* 开始界面图片样式 */
+#my-image {
+    width: 50vw;
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /*动画效果*/
+    animation: fade 2s linear forwards;
+}
+
+/* button的父元素，是一个flex布局，居中显示 */
+.button-area {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+}
+
+/* 按钮样式 */
+.button {
+    list-style-type: none;
+    text-align: center;
+    text-decoration: none;
+    font-size: 6vh;
+    color: #333;
+    opacity: 0.8;
+
+    height: 10vh;
+    width: 100vw;
+    padding: 0;
+    border: none;
+    margin: 0;
+
+    display: inline-block;
+    cursor: pointer;
+    background-color: lightgray;
+}
+
+/* 鼠标滑过时的样式 */
+.button:hover {
+    opacity: 0.6;
+}
+
+/* 下拉菜单的父元素 */
+.navtog {
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    height: 80px;
+    width: 100%;
+    background-color: gold;
+    background-image: url(#);
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    text-align: center;
+    font-size: 50px;
+    
+    cursor: pointer;
+
+
+    /* 动画效果 */
+    opacity: 1;
+    animation: appear 2s linear;
+}
+
+.navtog:active {
+    color: red;
+}
+
+/* 以下是下拉菜单的样式 */
+.dropdown {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 0;
+
+    width: 100%;
+    height: 0;
+
+    display: flex;
+    /* 使用 Flexbox 布局 */
+    justify-content: center;
+    /* 水平居中 */
+    align-items: center;
+    /* 垂直居中 */
+    flex-direction: column;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    z-index: 1;
+}
+
+.dropdown .button:hover {
+    background-color: #999;
+    opacity: 0.8;
+}
+
+.navtog.active+.dropdown {
+    height: 60%;
+}
+
+/* iframe的样式 */
+iframe {
+    width: 99vw;
+    height: calc(100vh - 160px);
+    position: absolute;
+    top: 80px;
+    /* 动画效果 */
+    opacity: 1;
+    animation: appear 2.5s linear;
+}

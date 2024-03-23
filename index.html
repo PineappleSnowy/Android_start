@@ -1,71 +1,30 @@
-<!DOCTYPE html>
-<html>
 <head>
-    <style>
-        .button-area{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            width: 60vw;
-            height: 80vh;
-            margin: auto;
-            margin-top: 10vh;
-            margin-bottom: 10vh;
-        }
-        .button {
-            height: 100px;
-            width: 200px;
-            background-color: gold;
-            color: black;
-            padding: 0;
-            border: none;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 20px;
-            margin-left: 5vw;
-            margin-right: 5vw;
-            cursor: pointer;
-        }
-        .button:hover{
-            opacity: 0.6;
-        }
-
-        @media screen and (max-width: 600px){
-            .button-area{
-                flex-direction: column;
-            }
-            .button {
-                margin-top: 10vh;
-                margin-bottom: 10vh;
-                font-size: 18px;
-            }
-        }
-    </style>
-
-    <script>
-        function redirectToLink(url) {
-            window.location.href = url;
-        }
-
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'ArrowUp') {
-                document.getElementById('leftButton').focus();
-            } else if (event.key === 'ArrowDown') {
-                document.getElementById('rightButton').focus();
-            }
-        });
-    </script>
+	<title>VisonVoice</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link rel="icon" href="./favicon.ico">
+	<link rel="stylesheet" href="index.css">
+	<link rel="manifest" href="manifest.json" />
 </head>
+
 <body>
-    <div class="button-area">
-        <button class="button" id="leftButton" onclick="redirectToLink('https://visionvoice.life')">
-            智慧拍照
-        </button>
-        <button class="button" id="rightButton" onclick="redirectToLink('https://pineapplesnowy.top')">
-            环境识别
-        </button>
-    </div>
+	<img id="my-image" src="favicon.png" alt="favicon" />
+	<div class="button-area">
+		<!-- 导航栏和两个按钮 -->
+		<div class="navtog" id="navtog">菜单</div>
+		<div class="dropdown">
+			<button class="button" id="install-button">安装</button>
+			<button class="button" id="camera-button">智慧拍照</button>
+			<button class="button" id="env-button">环境识别</button>
+		</div>
+
+		<!-- iframe -->
+		<iframe allow="camera *;" id="nestedWebpage"></iframe>
+		
+		<!-- 导航栏的script响应 -->
+		<!-- 点击使iframe的src改变 -->
+		<script src="./index.js"></script>
+	</div>
+	<script src="./sw.js"></script>
+	<script type="module" src="app.js"></script>
 </body>
-</html>

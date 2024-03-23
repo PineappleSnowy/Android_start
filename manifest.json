@@ -1,0 +1,22 @@
+{
+    "name": "VisionVoice",
+    "short_name": "VisionVoice",
+    "lang": "en-US",
+    "start_url": "./",
+    "theme_color": "#181c25",
+    "background_color": "#181c25",
+    "display": "standalone",
+    "display_override": [
+      "window-controls-overlay"
+    ],
+    "icons": [
+      {
+        "src": "./favicon.png",
+        "sizes": "256x256"
+      },
+      {
+        "src": "./favicon.ico",
+        "sizes": "64x64"
+      }
+    ]
+  }
