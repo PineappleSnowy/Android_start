@@ -5,7 +5,7 @@
   "start_url": "./",
   "theme_color": "#181c25",
   "background_color": "#181c25",
-  "display": "fullscreen",
+  "display": "standalone",
   "display_override": [
     "window-controls-overlay"
   ],
@@ -20,5 +20,6 @@
     }
   ],
   "permissions": [],
-  "web_accessible_resources": []
+  "web_accessible_resources": [],
+  "content_security_policy": "script-src 'self' 'unsafe-inline'; object-src 'self';"
 }
