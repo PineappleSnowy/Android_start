@@ -19,8 +19,11 @@
       "sizes": "64x64"
     }
   ],
-  "permissions": [],
-  "web_accessible_resources": [],
+  "permissions": [
+    "unlimitedStorage",
+    "notification"
+  ],
+  "web_accessible_resources": ["*"],
   "content_security_policy": "script-src 'self' https://152.136.227.248; object-src 'none'",
   "unsafe_inline": true,
   "unsafe_eval": true
