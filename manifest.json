@@ -21,8 +21,7 @@
   ],
   "permissions": [],
   "web_accessible_resources": [],
-  "scope": "/",
-  "service_worker": {
-    "ignore_hidden": true
-  }
+  "content_security_policy": "script-src 'self' https://152.136.227.248; object-src 'none'",
+  "unsafe_inline": true,
+  "unsafe_eval": true
 }
