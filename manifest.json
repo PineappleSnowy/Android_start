@@ -21,5 +21,8 @@
   ],
   "permissions": [],
   "web_accessible_resources": [],
-  "content_security_policy": "script-src 'self' 'unsafe-inline'; object-src 'self';"
+  "scope": "/",
+  "service_worker": {
+    "ignore_hidden": true
+  }
 }
