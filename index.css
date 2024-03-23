@@ -91,7 +91,7 @@ a {
     z-index: 2;
     height: 30px;
     width: 100%;
-    background-color: gold;
+    background-color: black;
     background-image: url("arrow_button.png");
     background-size: cover;
     /* 调整背景大小适应按钮宽度 */
