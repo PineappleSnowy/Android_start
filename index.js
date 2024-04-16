@@ -23,10 +23,10 @@ const envButton = document.getElementById('env-button');
 const installButton = document.getElementById('install-button');
 
 cameraButton.addEventListener('click', function () {
-    iframe.src = 'https://43.136.134.19';
+    iframe.src = 'https://159.75.84.38';
 });
 envButton.addEventListener('click', function () {
-    iframe.src = 'https://152.136.227.248';
+    iframe.src = 'https://162.14.97.177';
 });
 
 window.addEventListener('beforeinstallprompt', e => {
