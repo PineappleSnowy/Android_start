@@ -1,9 +1,9 @@
 
 if (navigator.serviceWorker != null) {
   navigator.serviceWorker.register('sw.js')
-  .then(function(registration) {
-    // console.log('Registered events at scope: ', registration.scope);
-  });
+    .then(function (registration) {
+      // console.log('Registered events at scope: ', registration.scope);
+    });
 }
 
 var cacheStorageKey = 'minimal-pwa-7'
@@ -20,14 +20,14 @@ var cacheList = [
 self.addEventListener('install', e => {
   e.waitUntil(
     caches.open(cacheStorageKey)
-    .then(cache => cache.addAll(cacheList))
-    .then(() => self.skipWaiting())
+      .then(cache => cache.addAll(cacheList))
+      .then(() => self.skipWaiting())
   )
 })
 
-self.addEventListener('fetch', function(e) {
+self.addEventListener('fetch', function (e) {
   e.respondWith(
-    caches.match(e.request).then(function(response) {
+    caches.match(e.request).then(function (response) {
       if (response != null) {
         return response
       }
@@ -36,7 +36,7 @@ self.addEventListener('fetch', function(e) {
   )
 })
 
-self.addEventListener('activate', function(e) {
+self.addEventListener('activate', function (e) {
   e.waitUntil(
     Promise.all(
       caches.keys().then(cacheNames => {
